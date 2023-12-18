@@ -6,6 +6,7 @@ use App\Models\Menu;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Schema::defaultStringLength(191);
         Paginator::useBootstrap();
         //Menu SideBar
         View::share('menuData', Menu::orderBy('sort', 'asc')->orderBy('name', 'asc')->whereStatus(0)->get());
