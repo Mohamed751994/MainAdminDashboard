@@ -2,10 +2,10 @@
 @include('admin_dashboard.main.index',
 [
     'title' => 'مستخدمين الداشبورد',
-    'create' => (auth()->user()->type === "admin") ? true : false,
-    'edit' => (auth()->user()->type === "admin") ? true : false,
+    'create' => true,
+    'edit' => true,
     'show' => false,
-    'delete' => (auth()->user()->type === "admin") ? true : false,
+    'delete' => true,
     'routeName'=>'users',
     'model'=>User::class,
     'thNames' =>[

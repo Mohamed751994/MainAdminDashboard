@@ -16,6 +16,11 @@ class SettingController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+        $this->middleware('permission:settings-index', ['only' => ['index']]);
+        $this->middleware('permission:settings-create', ['only' => ['create','store']]);
+        $this->middleware('permission:settings-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:settings-show', ['only' => ['show']]);
+        $this->middleware('permission:settings-delete', ['only' => ['destroy']]);
     }
 
     public function index()

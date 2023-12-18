@@ -57,7 +57,11 @@ class CrudService
             {
                 $data['slug']=str_replace(' ', '-', $data['slug']);
             }
-            $model::create($data);
+            $created = $model::create($data);
+            if(isset($data['roles']))
+            {
+                $created->assignRole($data['roles']);
+            }
             DB::commit();
             toastr()->success($this->insertMsg, 'success', ['timeOut' => 8000]);
             return redirect()->back();
@@ -106,6 +110,13 @@ class CrudService
                 $data['slug']=str_replace(' ', '-', $data['slug']);
             }
             $model->update($data);
+
+            if(isset($data['roles']))
+            {
+                DB::table('model_has_roles')->where('model_id',$model->id)->delete();
+                $model->assignRole($data['roles']);
+            }
+
             DB::commit();
             toastr()->success($this->updateMsg, 'success', ['timeOut' => 8000]);
             return redirect()->back();

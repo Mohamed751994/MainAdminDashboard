@@ -15,6 +15,11 @@ class IndustryController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+        $this->middleware('permission:industries-index', ['only' => ['index']]);
+        $this->middleware('permission:industries-create', ['only' => ['create','store']]);
+        $this->middleware('permission:industries-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:industries-show', ['only' => ['show']]);
+        $this->middleware('permission:industries-delete', ['only' => ['destroy']]);
     }
 
     public function index()

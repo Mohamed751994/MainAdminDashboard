@@ -9,11 +9,13 @@
         <div class="card-body">
             <div class="d-flex align-items-center">
                 <h5 class="mb-0"> <i class="bi bi-grid-fill"></i>   {{$title}} <small> ({{$content->total()}})</small> </h5>
-                @if($create)
-                <div class="ms-auto position-relative">
-                    <a href="{{route($routeName.'.create')}}" class="btnIcon btn btn-outline-primary px-5"><i class="lni lni-circle-plus"></i> إنشاء جديد </a>
-                </div>
-                @endif
+                @can($routeName.'-create')
+                    @if($create)
+                    <div class="ms-auto position-relative">
+                        <a href="{{route($routeName.'.create')}}" class="btnIcon btn btn-outline-primary px-5"><i class="lni lni-circle-plus"></i> إنشاء جديد </a>
+                    </div>
+                    @endif
+                @endcan
             </div>
             @if(isset($filter))
                 <div class="filterData">
@@ -35,6 +37,7 @@
 
             <!--Table Buttons-->
             <div class="row mt-4">
+                @can($routeName.'-delete')
                 @if($delete)
                 <div class="col-md-6">
                     <div class="d-flex justify-content-start align-items-center">
@@ -42,6 +45,7 @@
                     </div>
                 </div>
                 @endif
+                @endcan
             </div>
 
             <!--Table Index-->
@@ -49,25 +53,32 @@
                 <table class="table align-middle table-hover">
                     <thead class="table-secondary">
                     <tr>
+                        @can($routeName.'-delete')
                         @if($delete)
                         <th>
                             <input type="checkbox" class="form-check-input" id="checkAll">
                         </th>
                         @endif
-                    @foreach($thNames as $key =>$col)
+                        @endcan
+                        @foreach($thNames as $key =>$col)
                         <th>{{$key}}</th>
                         @endforeach
+                            @if($routeName == 'users')
+                                <th>الأدوار</th>
+                            @endif
                         <th>التحكم</th>
                     </tr>
                     </thead>
                     <tbody>
                     @forelse($content as $con)
                         <tr>
+                            @can($routeName.'-delete')
                             @if($delete)
                             <td>
                                 <input type="checkbox" class="form-check-input checkAll" name="checkboxes[]" value="{{$con->id}}">
                             </td>
                             @endif
+                            @endcan
                             @foreach($thNames as $key =>$col)
                             <td>
                                 @if($col == 'image')
@@ -82,16 +93,30 @@
                                 @endif
                             </td>
                             @endforeach
+                                @if($routeName == 'users')
+                                    <td>
+                                        @if(!empty($con->getRoleNames()))
+                                            @foreach($con->getRoleNames() as $v)
+                                                <label class="badge text-success bg-light-success">{{ $v }}</label>
+                                            @endforeach
+                                        @endif
+                                    </td>
+                                @endif
                             <td>
                                 <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                    @can($routeName.'-show')
                                     @if($show)
                                     <a href="{{route($routeName.'.show', $con->id)}}" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                        title="عرض"><i class="lni lni-eye"></i></a>
                                     @endif
+                                    @endcan
+                                    @can($routeName.'-edit')
                                     @if($edit)
                                     <a href="{{route($routeName.'.edit', $con->id)}}" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                        title="تعديل"><i class="bi bi-pencil-fill"></i></a>
                                     @endif
+                                    @endcan
+                                    @can($routeName.'-delete')
                                     @if($delete)
                                     <a href="javascript:;"  data-bs-toggle="modal" data-bs-target="#deleteItem{{$con->id}}" class="text-danger" data-bs-toggle="tooltip"
                                        data-bs-placement="bottom" title="حذف"><i class="bi bi-trash-fill"></i></a>
@@ -114,6 +139,7 @@
                                         </div>
                                     </div>
                                     @endif
+                                    @endcan
                                 </div>
                             </td>
                         </tr>

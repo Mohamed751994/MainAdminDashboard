@@ -20,6 +20,7 @@ Route::middleware(['auth'])->namespace('App\Http\Controllers\AdminControllers')-
 
     //Routes
     Route::resource('users', 'UserController');
+    Route::resource('roles', 'RoleController');
     Route::resource('seos', 'SeoController');
     Route::resource('orders', 'OrderController');
     Route::resource('settings', 'SettingController');

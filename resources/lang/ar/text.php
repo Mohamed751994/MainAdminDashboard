@@ -100,5 +100,81 @@ return [
     'successMessage' => 'تم ارسال البيانات بنجاح...',
     'typeRequired' => 'نوع الفورم مطلوب',
     'typeIn' => 'يجب أن يكون نوع الفورم (contact - service - solution - industry - career)',
+
+    //permissions
+    'teams-index' =>'قائمة فريق العمل',
+    'teams-create' =>'إنشاء فريق العمل',
+    'teams-edit' =>'تعديل فريق العمل',
+    'teams-show' =>'عرض فريق العمل',
+    'teams-delete' =>'حذف فريق العمل',
+
+    'services-index' =>'قائمة الخدمات',
+    'services-create' =>'إنشاء الخدمات',
+    'services-edit' =>'تعديل الخدمات',
+    'services-show' =>'عرض الخدمات',
+    'services-delete' =>'حذف الخدمات',
+
+    'solutions-index' =>'قائمة الحلول',
+    'solutions-create' =>'إنشاء الحلول',
+    'solutions-edit' =>'تعديل الحلول',
+    'solutions-show' =>'عرض الحلول',
+    'solutions-delete' =>'حذف الحلول',
+
+    'industries-index' =>'قائمة الصناعات',
+    'industries-create' =>'إنشاء الصناعات',
+    'industries-edit' =>'تعديل الصناعات',
+    'industries-show' =>'عرض الصناعات',
+    'industries-delete' =>'حذف الصناعات',
+
+    'categories-index' =>'قائمة أقسام المقالات',
+    'categories-create' =>'إنشاء أقسام المقالات',
+    'categories-edit' =>'تعديل أقسام المقالات',
+    'categories-show' =>'عرض أقسام المقالات',
+    'categories-delete' =>'حذف أقسام المقالات',
+
+    'blogs-index' =>'قائمة  المقالات',
+    'blogs-create' =>'إنشاء  المقالات',
+    'blogs-edit' =>'تعديل  المقالات',
+    'blogs-show' =>'عرض  المقالات',
+    'blogs-delete' =>'حذف  المقالات',
+
+    'careers-index' =>'قائمة  الوظائف',
+    'careers-create' =>'إنشاء  الوظائف',
+    'careers-edit' =>'تعديل  الوظائف',
+    'careers-show' =>'عرض  الوظائف',
+    'careers-delete' =>'حذف  الوظائف',
+
+    'settings-index' =>'قائمة  الإعدادات',
+    'settings-create' =>'إنشاء  الإعدادات',
+    'settings-edit' =>'تعديل  الإعدادات',
+    'settings-show' =>'عرض  الإعدادات',
+    'settings-delete' =>'حذف  الإعدادات',
+
+    'orders-index' =>'قائمة  الطلبات',
+    'orders-create' =>'إنشاء  الطلبات',
+    'orders-edit' =>'تعديل  الطلبات',
+    'orders-show' =>'عرض  الطلبات',
+    'orders-delete' =>'حذف  الطلبات',
+
+    'seos-index' =>'قائمة  محركات البحث',
+    'seos-create' =>'إنشاء  محركات البحث',
+    'seos-edit' =>'تعديل  محركات البحث',
+    'seos-show' =>'عرض  محركات البحث',
+    'seos-delete' =>'حذف  محركات البحث',
+
+    'users-index' =>'قائمة المستخدمين',
+    'users-create' =>'إنشاء  المستخدمين',
+    'users-edit' =>'تعديل  المستخدمين',
+    'users-show' =>'عرض  المستخدمين',
+    'users-delete' =>'حذف  المستخدمين',
+
+    'roles-index' =>'قائمة الصلاحيات',
+    'roles-create' =>'إنشاء  الصلاحيات',
+    'roles-edit' =>'تعديل  الصلاحيات',
+    'roles-show' =>'عرض  الصلاحيات',
+    'roles-delete' =>'حذف  الصلاحيات',
+
+
+
 ];
 

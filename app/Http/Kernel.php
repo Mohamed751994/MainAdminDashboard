@@ -37,6 +37,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
           //  \App\Http\Middleware\SetLocale::class,
+
         ],
 
         'api' => [
@@ -68,5 +69,8 @@ class Kernel extends HttpKernel
         'StartSession' => \App\Http\Middleware\StartSession::class,
         'trust' => \App\Http\Middleware\TrustApiMiddleware::class,
         'language' => \App\Http\Middleware\SetLocale::class,
+        'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+        'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+        'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
     ];
 }

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Requests\AdminLoginRequest;
-use App\Http\Requests\LoginRequest;
-use App\Http\Requests\StudentRequest;
 use App\Http\Traits\HelperTrait;
 use App\Models\User;
 use Illuminate\Http\Request;

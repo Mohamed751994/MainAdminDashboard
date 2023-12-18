@@ -1923,3 +1923,15 @@ input.error,textarea.error,select.error
     display: block;
     color: red;
 }
+.singlePermission input[type="checkbox"]
+{
+    width: 27px;
+    height: 27px;
+}
+.singlePermission
+{
+    background: #ebebeb;
+    padding: 30px 10px;
+    margin-bottom: 30px !important;
+    border-radius: 5px;
+}

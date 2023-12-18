@@ -15,6 +15,11 @@ class ServiceController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+        $this->middleware('permission:services-index', ['only' => ['index']]);
+        $this->middleware('permission:services-create', ['only' => ['create','store']]);
+        $this->middleware('permission:services-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:services-show', ['only' => ['show']]);
+        $this->middleware('permission:services-delete', ['only' => ['destroy']]);
     }
 
     public function index()

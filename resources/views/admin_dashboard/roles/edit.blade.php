@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   المستخدمين | تعديل   @endsection
+@section('Page_Title')   الأدوار والصلاحيات | تعديل   @endsection
 
 
 @section('content')
@@ -8,7 +8,7 @@
         <div class="col-lg-12 mx-auto">
             <div class="breadcrumb d-flex align-items-center justify-content-between">
                 <div class="">
-                    <a class="text-dark" href="{{route('users.index')}}">المستخدمين</a>
+                    <a class="text-dark" href="{{route('roles.index')}}">الأدوار والصلاحيات</a>
                     <span class="mx-2">-</span>
                     <strong class="text-primary">تعديل</strong>
                 </div>
@@ -21,34 +21,31 @@
                             <div class="card shadow-none bg-light border">
                                 <div class="card-body">
                                     <form class="row g-3" id="validateForm" method="post" enctype="multipart/form-data"
-                                          action="{{route('users.update', $content->id)}}">
+                                          action="{{route('roles.update', $content->id)}}">
                                         @method('put')
                                         @csrf
 
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
                                                 <label for="name"> الأسم <span class="text-danger">*</span> </label>
-                                                <input type="text" name="name" value="{{$content->name}}" id="name" class="form-control" required  placeholder="ادخل الأسم">
+                                                <input type="text" value="{{$content->name}}" name="name" id="name" class="form-control mt-2" required  placeholder="ادخل الأسم">
                                             </div>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
-                                                <label for="email"> البريد الإلكتروني <span class="text-danger">*</span> </label>
-                                                <input type="email" value="{{$content->email}}" name="email" id="email" class="form-control" required  placeholder="ادخل البريد الإلكتروني">
+                                                <label class="mb-3" for="email"> الصلاحيات <span class="text-danger">*</span> </label>
+                                                <div class="row align-items-center justify-content-between">
+                                                    @foreach($permission as $value)
+                                                        <div class="col-md-2 d-flex align-items-center m-2 singlePermission">
+                                                            <input  id="id_{{$value->id}}" @if(in_array($value->id, $rolePermissions)) checked @endif type="checkbox"  name="permission[]" value="{{$value->id}}">
+                                                            <label class="mx-3" for="id_{{$value->id}}">@lang('text.'.$value->name)</label>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+
                                             </div>
                                         </div>
 
-                                        <div class="col-12 mb-3">
-                                            <div class="form-group">
-                                                <label for="password"> الأدوار والصلاحيات <span class="text-danger">*</span> </label>
-                                                <select class="form-control form-select my-3" name="roles[]">
-                                                    <option>اختر الدور</option>
-                                                    @foreach($compact['roles'] as $key => $val)
-                                                        <option @if(in_array($key, $compact['userRole'])) selected @endif value="{{$key}}">{{$val}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
                                         @include('admin_dashboard.inputs.edit_btn')
                                     </form>
                                 </div>
@@ -73,15 +70,6 @@
                     'name': {
                         required: true,
                     },
-                    'email': {
-                        required: true,
-                    },
-                    'password': {
-                        required: true,
-                    },
-                    'roles[]': {
-                        required: true,
-                    },
 
 
                 },
@@ -90,16 +78,6 @@
                     'name': {
                         required: 'الحقل مطلوب',
                     },
-                    'email': {
-                        required: 'الحقل مطلوب',
-                    },
-                    'password': {
-                        required: 'الحقل مطلوب',
-                    },
-                    'roles[]': {
-                        required: 'الحقل مطلوب',
-                    },
-
 
                 }
             });

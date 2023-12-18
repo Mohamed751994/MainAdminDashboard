@@ -20,13 +20,15 @@
         </li>
 
         @foreach($menuData as $menu)
-        <li>
-            <a href="{{ route($menu->route_name.'.index')  }}">
-                <div class="parent-icon"><i class="{{$menu->icon}}"></i>
-                </div>
-                <div class="menu-title">{{$menu->name}}</div>
-            </a>
-        </li>
+            @can($menu->route_name.'-index')
+            <li>
+                <a href="{{ route($menu->route_name.'.index')  }}">
+                    <div class="parent-icon"><i class="{{$menu->icon}}"></i>
+                    </div>
+                    <div class="menu-title">{{$menu->name}}</div>
+                </a>
+            </li>
+            @endcan
         @endforeach
 
 

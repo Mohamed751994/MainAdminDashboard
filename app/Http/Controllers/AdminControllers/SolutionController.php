@@ -15,6 +15,11 @@ class SolutionController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+        $this->middleware('permission:solutions-index', ['only' => ['index']]);
+        $this->middleware('permission:solutions-create', ['only' => ['create','store']]);
+        $this->middleware('permission:solutions-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:solutions-show', ['only' => ['show']]);
+        $this->middleware('permission:solutions-delete', ['only' => ['destroy']]);
     }
 
     public function index()

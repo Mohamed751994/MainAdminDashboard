@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\User;
 use App\Services\CrudService;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -16,6 +17,11 @@ class UserController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+        $this->middleware('permission:users-index', ['only' => ['index']]);
+        $this->middleware('permission:users-create', ['only' => ['create','store']]);
+        $this->middleware('permission:users-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:users-show', ['only' => ['show']]);
+        $this->middleware('permission:users-delete', ['only' => ['destroy']]);
     }
 
     public function index()
@@ -25,7 +31,8 @@ class UserController extends Controller
 
     public function create()
     {
-        return $this->crudService->create($this->views);
+        $compact['roles'] = Role::pluck('name','name')->all();
+        return $this->crudService->create($this->views,$compact);
     }
 
     public function store(MainRequest $request)
@@ -40,7 +47,9 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        return $this->crudService->edit($user,$this->views);
+        $compact['roles'] = Role::pluck('name','name')->all();
+        $compact['userRole']  = $user->roles->pluck('name','name')->all();
+        return $this->crudService->edit($user,$this->views,$compact);
     }
 
     public function update(MainRequest $request, User $user)

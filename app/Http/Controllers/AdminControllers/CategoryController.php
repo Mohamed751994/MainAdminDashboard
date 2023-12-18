@@ -15,6 +15,11 @@ class CategoryController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+        $this->middleware('permission:categories-index', ['only' => ['index']]);
+        $this->middleware('permission:categories-create', ['only' => ['create','store']]);
+        $this->middleware('permission:categories-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:categories-show', ['only' => ['show']]);
+        $this->middleware('permission:categories-delete', ['only' => ['destroy']]);
     }
 
     public function index()

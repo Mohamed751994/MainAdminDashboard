@@ -15,6 +15,12 @@ class TeamController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+
+        $this->middleware('permission:teams-index', ['only' => ['index']]);
+        $this->middleware('permission:teams-create', ['only' => ['create','store']]);
+        $this->middleware('permission:teams-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:teams-show', ['only' => ['show']]);
+        $this->middleware('permission:teams-delete', ['only' => ['destroy']]);
     }
 
     public function index()

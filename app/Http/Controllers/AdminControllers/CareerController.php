@@ -15,6 +15,11 @@ class CareerController extends Controller
     public function __construct(CrudService $crudService)
     {
         $this->crudService = $crudService;
+        $this->middleware('permission:careers-index', ['only' => ['index']]);
+        $this->middleware('permission:careers-create', ['only' => ['create','store']]);
+        $this->middleware('permission:careers-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:careers-show', ['only' => ['show']]);
+        $this->middleware('permission:careers-delete', ['only' => ['destroy']]);
     }
 
     public function index()

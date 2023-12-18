@@ -52,6 +52,7 @@ class MainRequest extends FormRequest
             'name' => 'nullable',
             'email' => 'nullable|email',
             'password' => 'nullable|min:8|max:25',
+            'roles' => 'nullable',
         ];
 
     }
