@@ -44,6 +44,6 @@ class Blog extends Model
             'image',
             'views',
             'tags'
-        ])->with('category');
+        ]);
     }
 }

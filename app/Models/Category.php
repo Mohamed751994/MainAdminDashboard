@@ -15,4 +15,23 @@ class Category extends Model
         return $this->hasMany(Blog::class, 'category_id');
     }
 
+    public function scopeSort($q)
+    {
+        return $q->orderBy('id', 'asc');
+    }
+
+    public function scopeActive($q)
+    {
+
+    }
+
+    public function scopeRetrieve($q)
+    {
+        return $q->select([
+            'id',
+            'title_'.app()->getLocale().' as title'
+        ]);
+    }
+
+
 }
