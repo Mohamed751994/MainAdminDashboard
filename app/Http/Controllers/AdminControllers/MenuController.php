@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Permission\Models\Permission;
 
 class MenuController extends Controller
 {
@@ -41,6 +42,19 @@ class MenuController extends Controller
                 File::put($path.'/index.blade.php','');
                 File::put($path.'/show.blade.php','');
             }
+
+            $permissions = [
+                $endPoint.'-index',
+                $endPoint.'-create',
+                $endPoint.'-edit',
+                $endPoint.'-show',
+                $endPoint.'-delete',
+            ];
+            foreach ($permissions as $permission) {
+                Permission::create(['name' => $permission]);
+            }
+
+
         }
         return redirect()->back();
     }

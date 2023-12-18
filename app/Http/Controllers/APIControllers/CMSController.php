@@ -8,6 +8,7 @@ use App\Http\Traits\HelperTrait;
 use App\Models\Blog;
 use App\Models\Career;
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Industry;
 use App\Models\Order;
 use App\Models\Seo;
@@ -95,6 +96,14 @@ class CMSController extends Controller
     }
     //******************************** End Blogs ********************************
 
+    //******************************** Faqs ********************************
+    public function faqs()
+    {
+        return $this->apiService->getAllRecords(Faq::class,'الأسئلة الشائعة');
+    }
+    //******************************** End Faqs ********************************
+
+
 
     //******************************** Settings And SEO ********************************
     public function settings()
@@ -125,6 +134,7 @@ class CMSController extends Controller
         }
     }
     //******************************** End saveOrder ********************************
+
 
 
 }

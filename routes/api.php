@@ -32,6 +32,7 @@ Route::middleware(['trust', 'language'])->group(function () {
     Route::get('/categories', [CMSController::class, 'categories'])->name('categories');
     Route::get('/blogs', [CMSController::class, 'blogs'])->name('blogs');
     Route::get('/blog/{slug}', [CMSController::class, 'blog'])->name('blog');
+    Route::get('/faqs', [CMSController::class, 'faqs'])->name('faqs');
 
     //Settings
     Route::get('/settings', [CMSController::class, 'settings'])->name('settings');

@@ -19,6 +19,7 @@ Route::middleware(['auth'])->namespace('App\Http\Controllers\AdminControllers')-
     Route::post('/deleteSelectedItems', [DashboardController::class, 'deleteSelectedItems'])->name('admin.deleteSelectedItems');
 
     //Routes
+Route::resource('faqs', 'FaqController');
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
     Route::resource('seos', 'SeoController');
