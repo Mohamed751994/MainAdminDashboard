@@ -29,6 +29,7 @@ Route::middleware(['trust', 'language'])->group(function () {
     Route::get('/careers', [CMSController::class, 'careers'])->name('careers');
     Route::get('/career/{slug}', [CMSController::class, 'career'])->name('career');
     Route::get('/team', [CMSController::class, 'team'])->name('team');
+    Route::get('/categories', [CMSController::class, 'categories'])->name('categories');
     Route::get('/blogs', [CMSController::class, 'blogs'])->name('blogs');
     Route::get('/blog/{slug}', [CMSController::class, 'blog'])->name('blog');
 

@@ -7,6 +7,7 @@ use App\Http\Requests\OrderRequest;
 use App\Http\Traits\HelperTrait;
 use App\Models\Blog;
 use App\Models\Career;
+use App\Models\Category;
 use App\Models\Industry;
 use App\Models\Order;
 use App\Models\Seo;
@@ -80,6 +81,10 @@ class CMSController extends Controller
     //******************************** End Team ********************************
 
     //******************************** Blogs ********************************
+    public function categories()
+    {
+        return $this->apiService->getAllRecords(Category::class,'أقسام المقالات');
+    }
     public function blogs()
     {
         return $this->apiService->getAllRecords(Blog::class,'المقالات');
