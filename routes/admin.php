@@ -17,9 +17,11 @@ Route::middleware(['auth'])->namespace('App\Http\Controllers\AdminControllers')-
     Route::post('/store-menu', [MenuController::class, 'store'])->name('admin.storeMenu');
     Route::post('/quickChange', [DashboardController::class, 'quickChange'])->name('admin.quickChange');
     Route::post('/deleteSelectedItems', [DashboardController::class, 'deleteSelectedItems'])->name('admin.deleteSelectedItems');
+    Route::get('/user-profile', [DashboardController::class, 'userProfile'])->name('admin.userProfile');
+    Route::put('/updateUserProfile', [DashboardController::class, 'updateUserProfile'])->name('admin.updateUserProfile');
 
     //Routes
-Route::resource('faqs', 'FaqController');
+    Route::resource('faqs', 'FaqController');
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
     Route::resource('seos', 'SeoController');

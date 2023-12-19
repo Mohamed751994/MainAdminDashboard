@@ -58,6 +58,16 @@
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a class="dropdown-item" href="{{route('admin.userProfile')}}">
+                        <div class="d-flex align-items-center">
+                            <div class=""><i class="bi bi-person-fill"></i></div>
+                            <div class="ms-3"><span>تعديل البيانات الشخصية </span></div>
+                        </div>
+                    </a>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
 
                 <li>
                     <a class="dropdown-item" href="{{ route('logout_admin') }}"

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\AdminControllers;
+use App\Http\Requests\UpdateProfileRequest;
 use App\Models\Blog;
 use App\Models\Career;
 use App\Models\Industry;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 
 class DashboardController extends Controller
@@ -87,6 +89,35 @@ class DashboardController extends Controller
         $model::whereIn('id',$ids)->delete();
         toastr()->success('تم حذف الأعمدة المحددة بنجاح', 'نجح', ['timeOut' => 8000]);
         return response()->json(['success'=>true]);
+    }
+
+
+
+    public function userProfile()
+    {
+        return view('admin_dashboard.userProfile');
+    }
+
+
+    public function updateUserProfile(UpdateProfileRequest $request)
+    {
+        try {
+            $data = $request->validated();
+            if(isset($data['password']))
+            {
+                $data['password'] = Hash::make($data['password']);
+                auth()->user()->update($data);
+            }
+            else
+            {
+                auth()->user()->update(['name'=>$data['name'], 'email' =>$data['email']]);
+
+            }
+            toastr()->success($this->updateMsg, 'success', ['timeOut' => 8000]);
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            return $th;
+        }
     }
 
 
