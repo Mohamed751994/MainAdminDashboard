@@ -14,14 +14,29 @@ use Spatie\Permission\Models\Permission;
 class MenuController extends Controller
 {
 
+    public function index()
+    {
+        $content = Menu::with('children')->whereType('parent')->orderBy('sort','asc')->orderBy('name','asc')->get();
+        return view('admin_dashboard.menus.index',compact('content'));
+    }
+
     public function create()
     {
-        return view('admin_dashboard.menus.create');
+        $parents = Menu::whereType('parent')->pluck('id', 'name');
+        return view('admin_dashboard.menus.create',compact('parents'));
     }
 
     public function store(Request $request)
     {
-        $data = $request->validate(['name' =>'required','model_name' =>'required', 'icon' =>'required' , 'route_name' =>'required','sort'=>'required']);
+        $data = $request->validate([
+            'type' =>'required',
+            'parent_id' =>'nullable',
+            'name' =>'required',
+            'model_name' =>'required',
+            'icon' =>'required' ,
+            'route_name' =>'required',
+            'sort'=>'required'
+        ]);
         $created = Menu::create($data);
         if($created)
         {
@@ -53,9 +68,31 @@ class MenuController extends Controller
             foreach ($permissions as $permission) {
                 Permission::create(['name' => $permission]);
             }
-
-
         }
+        return redirect()->back();
+    }
+
+
+
+    public function edit(Menu $menu)
+    {
+        $parents = Menu::whereType('parent')->pluck('id', 'name');
+        $content = $menu;
+        return view('admin_dashboard.menus.edit',compact('content','parents'));
+    }
+
+    public function update(Request $request, Menu $menu)
+    {
+        $data = $request->validate([
+            'type' =>'required',
+            'parent_id' =>'nullable',
+            'name' =>'required',
+            'model_name' =>'required',
+            'icon' =>'required' ,
+            'route_name' =>'required',
+            'sort'=>'required'
+        ]);
+        $menu->update($data);
         return redirect()->back();
     }
 

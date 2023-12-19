@@ -19,16 +19,40 @@
             </a>
         </li>
 
+
+
         @foreach($menuData as $menu)
-            @can($menu->route_name.'-index')
-            <li>
-                <a href="{{ route($menu->route_name.'.index')  }}">
-                    <div class="parent-icon"><i class="{{$menu->icon}}"></i>
-                    </div>
-                    <div class="menu-title">{{$menu->name}}</div>
-                </a>
-            </li>
-            @endcan
+            @if(count($menu->children) > 0)
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class="{{$menu->icon}}"></i>
+                        </div>
+                        <div class="menu-title">{{$menu->name}}</div>
+                    </a>
+                    <ul>
+                        @can($menu->route_name.'-index')
+                        <li> <a href="{{ route($menu->route_name.'.index')  }}"><i class="{{$menu->icon}}"></i>{{$menu->name}}</a>
+                        </li>
+                        @endcan
+                        @foreach($menu->children as $child)
+                            @can($child->route_name.'-index')
+                                <li> <a href="{{ route($child->route_name.'.index')  }}"><i class="{{$child->icon}}"></i>{{$child->name}}</a>
+                                </li>
+                            @endcan
+                        @endforeach
+                    </ul>
+                </li>
+            @else
+                @can($menu->route_name.'-index')
+                <li>
+                    <a href="{{ route($menu->route_name.'.index')  }}">
+                        <div class="parent-icon"><i class="{{$menu->icon}}"></i>
+                        </div>
+                        <div class="menu-title">{{$menu->name}}</div>
+                    </a>
+                </li>
+                @endcan
+            @endif
         @endforeach
 
 

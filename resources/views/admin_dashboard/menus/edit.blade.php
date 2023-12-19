@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   القائمة | إضافة   @endsection
+@section('Page_Title')   القائمة | تعديل   @endsection
 
 
 @section('content')
@@ -14,52 +14,53 @@
                             <div class="card shadow-none bg-light border">
                                 <div class="card-body">
                                     <form class="row g-3" id="validateForm" method="post" enctype="multipart/form-data"
-                                          action="{{route('menus.store')}}">
+                                          action="{{route('menus.update', $content->id)}}">
+                                        @method('put')
                                         @csrf
 
                                         <div class="col-md-12">
                                             <label class="form-label">  النوع  <span class="text-danger">*</span> </label>
                                             <select class="form-select form-control" name="type" required id="changeType">
-                                                <option value="parent">Parent</option>
-                                                <option value="child">Child</option>
+                                                <option value="parent" @selected($content->type == 'parent')>Parent</option>
+                                                <option value="child" @selected($content->type == 'child')>Child</option>
                                             </select>
                                         </div>
 
-                                        <div class="col-md-12 d-none" id="parents">
+                                        <div class="col-md-12 @if($content->type == 'parent') d-none @endif" id="parents">
                                             <label class="form-label">  القائمة   </label>
                                             <select class="form-select form-control" name="parent_id" required>
                                                 <option value="">اختر الأب</option>
                                                 @foreach($parents as $key=>$val)
-                                                <option value="{{$val}}">{{$key}}</option>
+                                                    <option @selected($content->parent_id == $val) value="{{$val}}">{{$key}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
 
                                         <div class="col-md-6">
                                             <label class="form-label">  الأسم  <span class="text-danger">*</span> </label>
-                                            <input type="text" name="name" class="form-control" required placeholder="ادخل الأسم ">
+                                            <input type="text" name="name" value="{{$content->name}}" class="form-control" required placeholder="ادخل الأسم ">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">  اسم الموديل  <span class="text-danger">*</span> </label>
-                                            <input type="text" name="model_name" class="form-control" required placeholder="ادخل الأسم ">
+                                            <input type="text" name="model_name" value="{{$content->model_name}}" class="form-control" required placeholder="ادخل الأسم ">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">  الأيكون  <span class="text-danger">*</span> </label>
                                             <div class="d-flex align-items-center">
-                                                <input type="text" name="icon" id="inputIcon" class="form-control" required placeholder="ادخل الأيكون">
+                                                <input  value="{{$content->icon}}" type="text" name="icon" id="inputIcon" class="form-control" required placeholder="ادخل الأيكون">
                                                 <button type="button" class="btn btn-secondary w-100"  data-bs-toggle="modal" data-bs-target="#icons">اختار الأيكون</button>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">  اسم الroute  <span class="text-danger">*</span> </label>
-                                            <input type="text" name="route_name" class="form-control" required placeholder="ادخل اسم الroute">
+                                            <input type="text" name="route_name"  value="{{$content->route_name}}" class="form-control" required placeholder="ادخل اسم الroute">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="form-label">  الترتيب <span class="text-danger">*</span> </label>
-                                            <input type="number" min="0" value="1" name="sort" class="form-control" required placeholder="ادخل  الترتيب">
+                                            <input type="number" min="0"   value="{{$content->sort}}" name="sort" class="form-control" required placeholder="ادخل  الترتيب">
                                         </div>
 
-                                        @include('admin_dashboard.inputs.add_btn')
+                                        @include('admin_dashboard.inputs.edit_btn')
                                     </form>
                                 </div>
                             </div>
@@ -71,7 +72,7 @@
     </div>
 
 
-@include('admin_dashboard.menus.icons')
+    @include('admin_dashboard.menus.icons')
 
 @endsection
 
@@ -131,9 +132,9 @@
         });
 
         $(document).on('click', '#getIconClass .col', function(){
-           let classIcon = $(this).find('i').attr('class');
-           $('#inputIcon').val(classIcon);
-           $('#icons').modal('hide');
+            let classIcon = $(this).find('i').attr('class');
+            $('#inputIcon').val(classIcon);
+            $('#icons').modal('hide');
         });
 
         $(document).on('change', '#changeType', function(){
@@ -145,7 +146,6 @@
                 $('#parents').addClass('d-none');
             }
             $('#parents select').val('');
-
         });
 
     </script>

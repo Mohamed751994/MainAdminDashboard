@@ -1935,3 +1935,41 @@ input.error,textarea.error,select.error
     margin-bottom: 30px !important;
     border-radius: 5px;
 }
+.parentMenu li.parent
+{
+    background: #e1e1e1;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.parentMenu i
+{
+    font-size: 11px;
+    font-weight: bold;
+    color: red;
+}
+.parentMenu li ul
+{
+    margin: 15px 35px;
+}
+.parentMenu li ul li.child
+{
+    background: #d4d4d4;
+    margin-bottom: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.parentMenu li.parentUp:first-child
+{
+    display: block !important;
+}
+.parentMenu  a i
+{
+    color: #0f47e7;
+}

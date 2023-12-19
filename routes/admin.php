@@ -11,14 +11,16 @@ Route::post('/login', [AuthController::class, 'login'])->name('admin.login');
 
 /*All Admin Routes List*/
 Route::middleware(['auth'])->namespace('App\Http\Controllers\AdminControllers')->group(function () {
+
+    //Default
     Route::post('/logout_admin', [DashboardController::class, 'logout'])->name('logout_admin');
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/create-menu', [MenuController::class, 'create'])->name('admin.createMenu');
-    Route::post('/store-menu', [MenuController::class, 'store'])->name('admin.storeMenu');
     Route::post('/quickChange', [DashboardController::class, 'quickChange'])->name('admin.quickChange');
     Route::post('/deleteSelectedItems', [DashboardController::class, 'deleteSelectedItems'])->name('admin.deleteSelectedItems');
     Route::get('/user-profile', [DashboardController::class, 'userProfile'])->name('admin.userProfile');
     Route::put('/updateUserProfile', [DashboardController::class, 'updateUserProfile'])->name('admin.updateUserProfile');
+    Route::resource('menus', 'MenuController');
+
 
     //Routes
     Route::resource('faqs', 'FaqController');
