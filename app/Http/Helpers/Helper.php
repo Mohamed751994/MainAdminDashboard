@@ -67,4 +67,23 @@ if (!function_exists('orderTypeColor')) {
     }
 }
 
+if (!function_exists('switcher')) {
+    function switcher()
+    {
+        if(session()->get('locale') == 'ar')
+        {
+            return 'en';
+        }
+        else
+        {
+            return 'ar';
+        }
+    }
+}
 
+if (!function_exists('currentLanguage')) {
+    function currentLanguage()
+    {
+        return session()->get('locale');
+    }
+}

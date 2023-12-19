@@ -36,7 +36,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-          //  \App\Http\Middleware\SetLocale::class,
+           \App\Http\Middleware\SwitchLanguageMiddleware::class,
 
         ],
 
@@ -68,7 +68,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'StartSession' => \App\Http\Middleware\StartSession::class,
         'trust' => \App\Http\Middleware\TrustApiMiddleware::class,
-        'language' => \App\Http\Middleware\SetLocale::class,
+        'switch-language' => \App\Http\Middleware\SwitchLanguageMiddleware::class,
         'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,

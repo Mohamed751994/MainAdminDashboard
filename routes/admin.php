@@ -9,8 +9,13 @@ use App\Http\Controllers\AdminControllers\DashboardController;
 Route::get('/login', [AuthController::class, 'login_page'])->name('admin.login_page');
 Route::post('/login', [AuthController::class, 'login'])->name('admin.login');
 
+Route::get("switch-language/{lang}", function ($lang) {
+    app()->setLocale($lang);
+    session()->put('locale', $lang);
+    return redirect()->back();
+})->name('switch-language');
 /*All Admin Routes List*/
-Route::middleware(['auth'])->namespace('App\Http\Controllers\AdminControllers')->group(function () {
+Route::middleware(['auth','switch-language'])->namespace('App\Http\Controllers\AdminControllers')->group(function () {
 
     //Default
     Route::post('/logout_admin', [DashboardController::class, 'logout'])->name('logout_admin');

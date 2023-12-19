@@ -7,6 +7,9 @@
 
         <div class="top-navbar-right ms-auto">
             <ul class="navbar-nav align-items-center">
+                <li class="mx-3 switcher">
+                    <a href="{{route('switch-language',switcher())}}">{{switcher()}}</a>
+                </li>
                 <li class="nav-item dropdown dropdown-large">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                         <div class="notifications">
@@ -62,7 +65,7 @@
                     <a class="dropdown-item" href="{{route('admin.userProfile')}}">
                         <div class="d-flex align-items-center">
                             <div class=""><i class="bi bi-person-fill"></i></div>
-                            <div class="ms-3"><span>تعديل البيانات الشخصية </span></div>
+                            <div class="ms-3"><span>@lang('text.Profile') </span></div>
                         </div>
                     </a>
                 </li>
@@ -76,7 +79,7 @@
 
                         <div class="d-flex align-items-center">
                             <div class=""><i class="bi bi-lock-fill"></i></div>
-                            <div class="ms-3"><span> تسجيل الخروج</span></div>
+                            <div class="ms-3"><span>@lang('text.Logout')</span></div>
                         </div>
                     </a>
                     <form id="logout-form" action="{{ route('logout_admin') }}" method="POST" class="d-none">

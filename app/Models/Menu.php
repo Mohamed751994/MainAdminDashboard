@@ -20,5 +20,10 @@ class Menu extends Model
         return $this->hasMany(self::class ,'parent_id');
     }
 
+    public function getNameAttribute($value)
+    {
+        return (currentLanguage() == 'en') ? ucfirst($this->route_name) : $value;
+    }
+
 
 }

@@ -15,7 +15,7 @@
             <a href="{{ route('admin.dashboard')  }}">
                 <div class="parent-icon"><i class="bi bi-house-fill"></i>
                 </div>
-                <div class="menu-title">الرئيسية</div>
+                <div class="menu-title">@lang('text.Home')</div>
             </a>
         </li>
 
