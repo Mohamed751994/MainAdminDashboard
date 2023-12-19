@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         //Menu SideBar
-//        View::share('menuData', Menu::with('children')->whereType('parent')->orderBy('sort', 'asc')->orderBy('name', 'asc')->whereStatus(0)->get());
+        View::share('menuData', Menu::with('children')->whereType('parent')->orderBy('sort', 'asc')->orderBy('name', 'asc')->whereStatus(0)->get());
 
         //Notifications
         View::share('notifications', Order::whereSeen(0)->latest()->select(['id','name', 'type', 'created_at'])->get());
