@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   المستخدمين | إضافة   @endsection
+@section('Page_Title')   @lang('text.'.\Request::segment(2).'-index') | @lang('text.Create')   @endsection
 
 
 @section('content')
@@ -8,9 +8,9 @@
         <div class="col-lg-12 mx-auto">
             <div class="breadcrumb d-flex align-items-center justify-content-between">
                 <div class="">
-                    <a class="text-dark" href="{{route('users.index')}}">المستخدمين</a>
+                    <a class="text-dark" href="{{route('users.index')}}">@lang('text.users-index')</a>
                     <span class="mx-2">-</span>
-                    <strong class="text-primary">إنشاء</strong>
+                    <strong class="text-primary">@lang('text.Create')</strong>
                 </div>
             </div>
             <div class="card">
@@ -26,28 +26,28 @@
 
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
-                                                <label for="name"> الأسم <span class="text-danger">*</span> </label>
-                                                <input type="text" name="name" id="name" class="form-control" required  placeholder="ادخل الأسم">
+                                                <label for="name"> @lang('text.Name') <span class="text-danger">*</span> </label>
+                                                <input type="text" name="name" id="name" class="form-control" required  placeholder="@lang('text.Name') ">
                                             </div>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
-                                                <label for="email"> البريد الإلكتروني <span class="text-danger">*</span> </label>
-                                                <input type="email" name="email" id="email" class="form-control" required  placeholder="ادخل البريد الإلكتروني">
+                                                <label for="email"> @lang('text.Email')  <span class="text-danger">*</span> </label>
+                                                <input type="email" name="email" id="email" class="form-control" required  placeholder="@lang('text.Email') ">
                                             </div>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
-                                                <label for="password"> كلمة المرور <span class="text-danger">*</span> </label>
-                                                <input type="password" name="password" id="password" class="form-control" required  placeholder="ادخل كلمة المرور">
+                                                <label for="password"> @lang('text.Password')  <span class="text-danger">*</span> </label>
+                                                <input type="password" name="password" id="password" class="form-control" required  placeholder="@lang('text.Password') ">
                                             </div>
                                         </div>
 
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
-                                                <label for="password"> الأدوار والصلاحيات <span class="text-danger">*</span> </label>
+                                                <label for="password"> @lang('text.roles-index')  <span class="text-danger">*</span> </label>
                                                 <select class="form-control form-select my-3" name="roles[]">
-                                                    <option>اختر الدور</option>
+                                                    <option>@lang('text.roles-index')</option>
                                                     @foreach($compact['roles'] as $key => $val)
                                                         <option value="{{$key}}">{{$val}}</option>
                                                     @endforeach
@@ -93,16 +93,16 @@
                 messages: {
 
                     'name': {
-                        required: 'الحقل مطلوب',
+                        required: "@lang('text.required')",
                     },
                     'email': {
-                        required: 'الحقل مطلوب',
+                        required: "@lang('text.required')",
                     },
                     'password': {
-                        required: 'الحقل مطلوب',
+                        required: "@lang('text.required')",
                     },
                     'roles[]': {
-                        required: 'الحقل مطلوب',
+                        required: "@lang('text.required')",
                     },
 
 

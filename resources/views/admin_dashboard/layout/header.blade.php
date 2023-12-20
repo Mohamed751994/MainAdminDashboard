@@ -19,7 +19,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end p-0">
                         <div class="p-2 border-bottom m-2">
-                            <h5 class="h5 mb-0">الإشعارات  </h5>
+                            <h5 class="h5 mb-0"> @lang('text.Notifications')  </h5>
                         </div>
                         <div class="header-notifications-list p-2">
 
@@ -28,22 +28,22 @@
                                 <div class="d-flex align-items-center">
                                     <div class="notification-box  bg-light-{{orderTypeColor($message->getRawOriginal('type'))}} text-{{orderTypeColor($message->getRawOriginal('type'))}}"><i class="bi bi-bell"></i></div>
                                     <div class="ms-3 flex-grow-1">
-                                        <h6 class="mb-0 dropdown-msg-user">طلب جديد  <span class="msg-time float-end text-secondary">{{$message->created_at->diffForHumans()}}</span></h6>
-                                        <small class="mb-0 dropdown-msg-text text-secondary d-flex align-items-center">  الطلب بخصوص فورم  <span class="mx-2">{!! $message->type!!}</span></small>
+                                        <h6 class="mb-0 dropdown-msg-user"> @lang('text.NewOrder') <span class="msg-time float-end text-secondary">{{$message->created_at->diffForHumans()}}</span></h6>
+                                        <small class="mb-0 dropdown-msg-text text-secondary d-flex align-items-center">   @lang('text.OrderRelatedToForm')  <span class="mx-2">{!! $message->type!!}</span></small>
                                     </div>
                                 </div>
                             </a>
                             @empty
                                 <div class="no_notifications text-center">
                                     <strong class="mt-3"><i class="bi bi-bell"></i></strong>
-                                    <h6>لا يوجد إشعارات</h6>
+                                    <h6> @lang('text.NoNotifications')</h6>
                                 </div>
                             @endforelse
                         </div>
                         <div class="p-2">
                             <div><hr class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('orders.index')}}">
-                                <div class="text-center">جميع الإشعارات</div>
+                                <div class="text-center"> @lang('text.AllNotifications')</div>
                             </a>
                         </div>
                     </div>

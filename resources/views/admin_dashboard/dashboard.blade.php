@@ -14,7 +14,7 @@
                         <i class="lni lni-users"></i>
                     </div>
                     <h3 class="text-white">{{$data['services']}}</h3>
-                    <p class="mb-0 text-white">عدد الخدمات </p>
+                    <p class="mb-0 text-white"> @lang('text.Count') @lang('text.Services') </p>
                 </div>
             </div>
         </a>
@@ -25,7 +25,7 @@
                         <i class="bi bi-people-fill"></i>
                     </div>
                     <h3 class="text-white">{{$data['solutions']}}</h3>
-                    <p class="mb-0 text-white">عدد الحلول </p>
+                    <p class="mb-0 text-white">@lang('text.Count') @lang('text.Solutions') </p>
                 </div>
             </div>
         </a>
@@ -36,7 +36,7 @@
                         <i class="lni lni-car"></i>
                     </div>
                     <h3 class="text-white">{{$data['industries']}}</h3>
-                    <p class="mb-0 text-white">عدد الصناعات</p>
+                    <p class="mb-0 text-white">@lang('text.Count') @lang('text.Industries')</p>
                 </div>
             </div>
         </a>
@@ -48,7 +48,7 @@
                         <i class="lni lni-car"></i>
                     </div>
                     <h3 class="text-white">{{$data['blogs']}}</h3>
-                    <p class="mb-0 text-white"> عدد المقالات</p>
+                    <p class="mb-0 text-white"> @lang('text.Count') @lang('text.Blogs')</p>
                 </div>
             </div>
         </a>
@@ -59,7 +59,7 @@
                         <i class="lni lni-car"></i>
                     </div>
                     <h3 class="text-white">{{$data['careers']}}</h3>
-                    <p class="mb-0 text-white">عدد الوظائف</p>
+                    <p class="mb-0 text-white">@lang('text.Count') @lang('text.Careers')</p>
                 </div>
             </div>
         </a>
@@ -70,7 +70,7 @@
                         <i class="lni lni-users"></i>
                     </div>
                     <h3 class="text-white">{{$data['orders']}}</h3>
-                    <p class="mb-0 text-white">عدد الطلبات </p>
+                    <p class="mb-0 text-white">@lang('text.Count') @lang('text.Orders') </p>
                 </div>
             </div>
         </a>
@@ -82,7 +82,7 @@
                 <div class="card-header bg-transparent border-0">
                     <div class="row g-3 align-items-center">
                         <div class="col">
-                            <h6 class=" mb-0 mt-3"> الطلبات</h6>
+                            <h6 class=" mb-0 mt-3">@lang('text.Orders')</h6>
                         </div>
                     </div>
                 </div>
@@ -110,15 +110,15 @@
             type: 'bar',
             data: {
                 labels: [
-                    'كل الطلبات  '+' ('+{{$data['orders']}}+')',
-                    'طلبات تواصل معنا'+' ('+{{$data['orders_contact']}}+')',
-                    'طلبات الخدمات'+' ('+{{$data['orders_services']}}+')',
-                    'طلبات الحلول'+' ('+{{$data['orders_solutions']}}+')',
-                    'طلبات الصناعات '+' ('+{{$data['orders_industries']}}+')',
-                    'طلبات الوظائف '+' ('+{{$data['orders_careers']}}+')'
+                    ' @lang('text.Orders')  '+' ('+{{$data['orders']}}+')',
+                    '@lang('text.Orders') @lang('text.Contactus')'+' ('+{{$data['orders_contact']}}+')',
+                    '@lang('text.Orders') @lang('text.Services')'+' ('+{{$data['orders_services']}}+')',
+                    '@lang('text.Orders') @lang('text.Solutions')'+' ('+{{$data['orders_solutions']}}+')',
+                    '@lang('text.Orders') @lang('text.Industries') '+' ('+{{$data['orders_industries']}}+')',
+                    '@lang('text.Orders') @lang('text.Careers') '+' ('+{{$data['orders_careers']}}+')'
                 ],
                 datasets: [{
-                    label: " الطلبات  ",
+                    label: "  @lang('text.Orders')  ",
                     data: [{{$data['orders']}},{{$data['orders_contact']}},{{$data['orders_services']}},{{$data['orders_solutions']}},{{$data['orders_industries']}},{{$data['orders_careers']}}],
                     borderWidth: 1,
                     borderColor: ['#ffffff','#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'], // Add custom color border

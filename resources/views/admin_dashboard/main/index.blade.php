@@ -12,7 +12,7 @@
                 @can($routeName.'-create')
                     @if($create)
                     <div class="ms-auto position-relative">
-                        <a href="{{route($routeName.'.create')}}" class="btnIcon btn btn-outline-primary px-5"><i class="lni lni-circle-plus"></i> إنشاء جديد </a>
+                        <a href="{{route($routeName.'.create')}}" class="btnIcon btn btn-outline-primary px-5"><i class="lni lni-circle-plus"></i> @lang('text.Create') </a>
                     </div>
                     @endif
                 @endcan
@@ -23,14 +23,14 @@
                         @foreach($filter as $f)
                             @if($f['input_type'] == 'select')
                             <select class="form-control form-select mx-1" name="{{$f['col']}}">
-                                <option value="">فلتر ب{{$f['col_ar']}} ....</option>
+                                <option value="">@lang('text.FilterBy') {{$f['col_ar']}} ....</option>
                                 @foreach($f['data'] as $d)
                                     <option @selected($d['value'] == request($f['col'])) value="{{$d['value']}}">{{$d['name_ar']}}</option>
                                 @endforeach
                             </select>
                             @endif
                         @endforeach
-                        <button type="submit" class="btn w-100 btn-success">بحث الآن</button>
+                        <button type="submit" class="btn w-100 btn-success">@lang('text.SearchNow')</button>
                     </form>
                 </div>
             @endif
@@ -41,7 +41,7 @@
                 @if($delete)
                 <div class="col-md-6">
                     <div class="d-flex justify-content-start align-items-center">
-                        <button class="btn btn-sm btn-danger" id="deleteSelected"><i class="mx-1  lni lni-close"></i> حذف المحدد</button>
+                        <button class="btn btn-sm btn-danger" id="deleteSelected"><i class="mx-1  lni lni-close"></i> @lang('text.SelectedDeleted')</button>
                     </div>
                 </div>
                 @endif
@@ -64,9 +64,9 @@
                         <th>{{$key}}</th>
                         @endforeach
                             @if($routeName == 'users')
-                                <th>الأدوار</th>
+                                <th>@lang('text.roles-index')</th>
                             @endif
-                        <th>التحكم</th>
+                        <th>@lang('text.Action')</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -107,32 +107,32 @@
                                     @can($routeName.'-show')
                                     @if($show)
                                     <a href="{{route($routeName.'.show', $con->id)}}" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                       title="عرض"><i class="lni lni-eye"></i></a>
+                                       title="@lang('text.Show')"><i class="lni lni-eye"></i></a>
                                     @endif
                                     @endcan
                                     @can($routeName.'-edit')
                                     @if($edit)
                                     <a href="{{route($routeName.'.edit', $con->id)}}" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                       title="تعديل"><i class="bi bi-pencil-fill"></i></a>
+                                       title="@lang('text.Edit')"><i class="bi bi-pencil-fill"></i></a>
                                     @endif
                                     @endcan
                                     @can($routeName.'-delete')
                                     @if($delete)
                                     <a href="javascript:;"  data-bs-toggle="modal" data-bs-target="#deleteItem{{$con->id}}" class="text-danger" data-bs-toggle="tooltip"
-                                       data-bs-placement="bottom" title="حذف"><i class="bi bi-trash-fill"></i></a>
+                                       data-bs-placement="bottom" title="@lang('text.Delete')"><i class="bi bi-trash-fill"></i></a>
                                     <div class="modal fade" id="deleteItem{{$con->id}}" tabindex="-1" aria-labelledby="link{{$con->id}}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="link{{$con->id}}">هل أنت متأكد من حذف هذا العنصر ؟</h5>
+                                                    <h5 class="modal-title" id="link{{$con->id}}">@lang('text.AreYouSure')</h5>
                                                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button class="btn btn-outline-default btn-sm me-2" type="button" data-bs-dismiss="modal">لا</button>
+                                                    <button class="btn btn-outline-default btn-sm me-2" type="button" data-bs-dismiss="modal">@lang('text.No')</button>
                                                     <form action="{{route($routeName.'.destroy',$con->id)}}" method="POST">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="submit" class="btn btn-outline-danger btn-sm" type="button">نعم</button>
+                                                        <button type="submit" class="btn btn-outline-danger btn-sm" type="button">@lang('text.Yes')</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -146,7 +146,7 @@
                     @empty
                         <tr>
                             <td colspan="{{count($thNames)+2}}" class="text-center">
-                                <p> لا يوجد بيانات </p>
+                                <p>@lang('text.no_data') </p>
                             </td>
                         </tr>
                     @endforelse

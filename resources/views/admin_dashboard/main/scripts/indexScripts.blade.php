@@ -61,14 +61,14 @@
             {
 
                 Swal.fire({
-                    title: "هل أنت متأكد من حذف العناصر ؟",
-                    text: "خطر جداً",
+                    title: "@lang('text.AreYouSure')",
+                    text: "@lang('text.AreYouSure')",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
-                    confirmButtonText: "نعم أنا متأكد",
-                    cancelButtonText: "لا ليس متأكد"
+                    confirmButtonText: "@lang('text.Yes')",
+                    cancelButtonText: "@lang('text.No')"
                 }).then((result) => {
                     if (result.isConfirmed) {
 
@@ -107,7 +107,7 @@
                     continueDelayOnInactiveTab: false,
                     position: 'top left',
                     size: 'mini',
-                    msg: 'يجب تحديد الأعمدة المراد حذفها أولاً'
+                    msg: '@lang('text.MustSelectedFirstly')'
                 });
             }
         });

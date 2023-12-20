@@ -1,7 +1,7 @@
 
 @include('admin_dashboard.main.index',
 [
-    'title' => 'مستخدمين الداشبورد',
+    'title' => __('text.'.\Request::segment(2).'-index'),
     'create' => true,
     'edit' => true,
     'show' => false,
@@ -10,7 +10,7 @@
     'model'=>User::class,
     'thNames' =>[
         '#' => 'id',
-        'الأسم' => 'name',
-        'البريد الإلكتروني' => 'email',
+         __('text.Name') => 'name',
+        __('text.Email') => 'email',
     ]
 ])

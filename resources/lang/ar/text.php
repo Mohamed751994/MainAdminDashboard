@@ -181,6 +181,40 @@ return [
     'faqs-delete' =>'حذف  الأسئلة الشائعة',
 
 
+    'Count' => 'عدد',
+    'Services' => 'الخدمات',
+    'Solutions' => 'الحلول',
+    'Industries' => 'الصناعات',
+    'Blogs' => 'المقالات',
+    'Careers' => 'الوظائف',
+    'Orders' => 'الطلبات',
+    'Contactus' => 'تواصل معنا',
+    'Create' => 'إنشاء جديد',
+    'Edit' => 'تعديل',
+    'Show' => 'عرض',
+    'Delete' => 'حذف',
+    'SelectedDeleted' => 'حذف المحدد',
+    'Notifications' => 'الإشعارات',
+    'NewOrder' => 'طلب جديد',
+    'OrderRelatedToForm' => 'الطلب من خلال فورم',
+    'NoNotifications' => 'لا يوجد إشعارات',
+    'AllNotifications' => 'كل الإشعارات',
+    'FilterBy' => 'فلتر ب',
+    'SearchNow' => 'بحث الأن',
+    'Action' => 'التحكم',
+    'AreYouSure' => 'هل أنت متأكد ؟',
+    'No' => 'لا',
+    'Yes' => 'نعم',
+    'MustSelectedFirstly' => 'يجب تحديد الأعمدة المراد حذفها أولاً',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+
+
 
 ];
 

@@ -96,5 +96,119 @@ return [
     'cvMax' => 'File must be not greater than 5 MB',
     'typeRequired' => 'Form Type is Required',
     'typeIn' => 'Form Type must be in (contact - service - solution - industry - career)',
+
+
+    //permissions
+    'teams-index' =>'Teams',
+    'teams-create' =>'Create Teams',
+    'teams-edit' =>'Edit Teams',
+    'teams-show' =>'Show Teams',
+    'teams-delete' =>'Delete Teams',
+
+    'services-index' =>'Services',
+    'services-create' =>'Create Services',
+    'services-edit' =>'Edit Services',
+    'services-show' =>'Show Services',
+    'services-delete' =>'Delete Services',
+
+    'solutions-index' =>'Solutions',
+    'solutions-create' =>'Create Solutions',
+    'solutions-edit' =>'Edit Solutions',
+    'solutions-show' =>'Show Solutions',
+    'solutions-delete' =>'Delete Solutions',
+
+    'industries-index' =>'Industries',
+    'industries-create' =>'Create Industries',
+    'industries-edit' =>'Edit Industries',
+    'industries-show' =>'Show Industries',
+    'industries-delete' =>'Delete Industries',
+
+
+    'categories-index' =>'Categories',
+    'categories-create' =>'Create Categories',
+    'categories-edit' =>'Edit Categories',
+    'categories-show' =>'Show Categories',
+    'categories-delete' =>'Delete Categories',
+
+    'blogs-index' =>'Blogs',
+    'blogs-create' =>'Create Blogs',
+    'blogs-edit' =>'Edit Blogs',
+    'blogs-show' =>'Show Blogs',
+    'blogs-delete' =>'Delete Blogs',
+
+    'careers-index' =>'Careers',
+    'careers-create' =>'Create Careers',
+    'careers-edit' =>'Edit Careers',
+    'careers-show' =>'Show Careers',
+    'careers-delete' =>'Delete Careers',
+
+    'settings-index' =>'Settings',
+    'settings-create' =>'Create Settings',
+    'settings-edit' =>'Edit Settings',
+    'settings-show' =>'Show Settings',
+    'settings-delete' =>'Delete Settings',
+
+    'orders-index' =>'Orders',
+    'orders-create' =>'Create Orders',
+    'orders-edit' =>'Edit Orders',
+    'orders-show' =>'Show Orders',
+    'orders-delete' =>'Delete Orders',
+
+    'seos-index' =>'Seos',
+    'seos-create' =>'Create Seos',
+    'seos-edit' =>'Edit Seos',
+    'seos-show' =>'Show Seos',
+    'seos-delete' =>'Delete Seos',
+
+    'users-index' =>'Users',
+    'users-create' =>'Create Users',
+    'users-edit' =>'Edit Users',
+    'users-show' =>'Show Users',
+    'users-delete' =>'Delete Users',
+
+    'roles-index' =>'Roles',
+    'roles-create' =>'Create Roles',
+    'roles-edit' =>'Edit Roles',
+    'roles-show' =>'Show Roles',
+    'roles-delete' =>'Delete Roles',
+
+    'faqs-index' =>'Faqs',
+    'faqs-create' =>'Create Faqs',
+    'faqs-edit' =>'Edit Faqs',
+    'faqs-show' =>'Show Faqs',
+    'faqs-delete' =>'Delete Faqs',
+
+
+
+
+    'Count' => 'Count',
+    'Services' => 'Services',
+    'Solutions' => 'Solutions',
+    'Industries' => 'Industries',
+    'Blogs' => 'Blogs',
+    'Careers' => 'Careers',
+    'Orders' => 'Orders',
+    'Contactus' => 'Contact us',
+
+    'Create' => 'Create new',
+    'Edit' => 'Edit',
+    'Show' => 'Show',
+    'Delete' => 'Delete',
+    'SelectedDeleted' => 'Delete Selected',
+
+    'Notifications' => 'Notifications',
+    'NewOrder' => 'New Order',
+    'OrderRelatedToForm' => 'Order Related To Form',
+    'NoNotifications' => 'No Notifications Founded',
+    'AllNotifications' => 'All Notifications',
+    'FilterBy' => 'Filter By',
+    'SearchNow' => 'Search Now',
+    'Action' => 'Action',
+    'AreYouSure' => 'Are You Sure ?',
+    'No' => 'No',
+    'Yes' => 'Yes',
+    'MustSelectedFirstly' => 'Must Select Deleted Items Firstly',
+
+
 ];
 
