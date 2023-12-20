@@ -1975,9 +1975,5 @@ input.error,textarea.error,select.error
 }
 .switcher a
 {
-    background: #003bad;
-    padding: 7px 15px;
-    border-radius: 10px;
-    font-weight: bold;
-    color: #fff;
+
 }

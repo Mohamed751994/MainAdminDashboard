@@ -8,11 +8,17 @@
         <div class="top-navbar-right ms-auto">
             <ul class="navbar-nav align-items-center">
                 <li class="mx-3 switcher">
-                    <a href="{{route('switch-language',switcher())}}">{{switcher()}}</a>
+                    <a href="{{route('switch-language',switcher())}}">
+                        @if(switcher() == 'en')
+                            <img src="{{asset('admin_dashboard/assets/images/icons/en.png')}}" width="20">
+                        @else
+                            <img src="{{asset('admin_dashboard/assets/images/icons/ar.png')}}" width="20">
+                        @endif
+                    </a>
                 </li>
                 <li class="nav-item dropdown dropdown-large">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
-                        <div class="notifications">
+                        <div class="notifications mt-2">
                             <span class="notify-badge">{{count($notifications)}}</span>
                             <i class="bi bi-bell-fill"></i>
                         </div>
