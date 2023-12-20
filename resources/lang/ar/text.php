@@ -168,11 +168,11 @@ return [
     'users-show' =>'عرض  المستخدمين',
     'users-delete' =>'حذف  المستخدمين',
 
-    'roles-index' =>'قائمة الصلاحيات',
-    'roles-create' =>'إنشاء  الصلاحيات',
-    'roles-edit' =>'تعديل  الصلاحيات',
-    'roles-show' =>'عرض  الصلاحيات',
-    'roles-delete' =>'حذف  الصلاحيات',
+    'roles-index' =>'قائمة الأدوار',
+    'roles-create' =>'إنشاء  الأدوار',
+    'roles-edit' =>'تعديل  الأدوار',
+    'roles-show' =>'عرض  الأدوار',
+    'roles-delete' =>'حذف  الأدوار',
 
     'faqs-index' =>'قائمة الأسئلة الشائعة',
     'faqs-create' =>'إنشاء  الأسئلة الشائعة',
