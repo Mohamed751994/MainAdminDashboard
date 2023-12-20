@@ -69,6 +69,7 @@ class Kernel extends HttpKernel
         'StartSession' => \App\Http\Middleware\StartSession::class,
         'trust' => \App\Http\Middleware\TrustApiMiddleware::class,
         'switch-language' => \App\Http\Middleware\SwitchLanguageMiddleware::class,
+        'language' => \App\Http\Middleware\SetLocale::class,
         'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
