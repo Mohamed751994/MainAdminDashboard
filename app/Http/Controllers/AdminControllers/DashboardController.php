@@ -87,7 +87,7 @@ class DashboardController extends Controller
         $model =  app("App\Models\\".$request->model);
         $ids = $request->ids;
         $model::whereIn('id',$ids)->delete();
-        toastr()->success('تم حذف الأعمدة المحددة بنجاح', 'نجح', ['timeOut' => 8000]);
+        toastr()->success( __('text.deleteSelectedItems'), 'success', ['timeOut' => 8000]);
         return response()->json(['success'=>true]);
     }
 
@@ -112,7 +112,7 @@ class DashboardController extends Controller
                 auth()->user()->update(['name'=>$data['name'], 'email' =>$data['email']]);
 
             }
-            toastr()->success($this->updateMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.updateMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             return $th;

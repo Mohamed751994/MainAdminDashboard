@@ -46,7 +46,7 @@ class RoleController extends Controller
             $role = Role::create(['name' => $data['name']]);
             $role->permissions()->sync($data['permission']);
             DB::commit();
-            toastr()->success($this->insertMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.insertMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -81,7 +81,7 @@ class RoleController extends Controller
             $role->update(['name' => $data['name']]);
             $role->permissions()->sync($data['permission']);
             DB::commit();
-            toastr()->success($this->updateMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.updateMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -92,7 +92,7 @@ class RoleController extends Controller
     {
         try {
             DB::table("roles")->where('id',$role->id)->delete();
-            toastr()->success($this->deleteMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.deleteMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();

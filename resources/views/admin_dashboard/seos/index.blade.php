@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')  محركات البحث @endsection
+@section('Page_Title')    @lang('text.'.\Request::segment(2).'-index') @endsection
 
 @section('content')
 
@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-body">
             <div class="d-flex align-items-center">
-                <h5 class="mb-0"> <i class="bi bi-grid-fill"></i>  محركات البحث </h5>
+                <h5 class="mb-0"> <i class="bi bi-grid-fill"></i>  @lang('text.'.\Request::segment(2).'-index') </h5>
             </div>
 
             <form class="row g-3 mt-5" id="validateForm" method="post" enctype="multipart/form-data"

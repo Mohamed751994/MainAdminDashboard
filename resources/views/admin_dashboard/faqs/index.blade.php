@@ -1,6 +1,6 @@
 @include('admin_dashboard.main.index',
 [
-    'title' => 'الأسئلة الشائعة',
+     'title' => __('text.'.\Request::segment(2).'-index'),
     'create' => true,
     'edit' => true,
     'show' => false,
@@ -9,8 +9,8 @@
     'model'=>Faq::class,
     'thNames' =>[
         '#' => 'id',
-        'الأسم' => 'title_ar',
-        'الحالة' => 'status',
-        'الترتيب' => 'sort'
+         __('text.Name') => 'title_'.currentLanguage(),
+       __('text.Status') => 'status',
+         __('text.Sort') => 'sort'
     ]
 ])

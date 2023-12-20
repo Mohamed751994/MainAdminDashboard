@@ -1,6 +1,6 @@
 @include('admin_dashboard.main.index',
 [
-    'title' => 'الأدوار والصلاحيات',
+    'title' => __('text.'.\Request::segment(2).'-index'),
     'create' => true,
     'edit' => true,
     'show' => false,
@@ -9,6 +9,6 @@
     'model'=>Role::class,
     'thNames' =>[
         '#' => 'id',
-        'الأسم' => 'name'
-    ]
+         __('text.Name') => 'name',
+         ]
 ])

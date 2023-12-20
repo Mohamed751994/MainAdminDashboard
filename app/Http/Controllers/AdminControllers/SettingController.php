@@ -47,7 +47,7 @@ class SettingController extends Controller
             $data['key'] = str_replace(' ', '_', $data['key']);
             Setting::create($data);
             DB::commit();
-            toastr()->success($this->insertMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.insertMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -78,7 +78,7 @@ class SettingController extends Controller
             }
             $setting->update($data);
             DB::commit();
-            toastr()->success($this->updateMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.updateMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();

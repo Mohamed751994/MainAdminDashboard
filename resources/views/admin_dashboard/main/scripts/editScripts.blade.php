@@ -21,7 +21,7 @@
                     @foreach($inputs as $in)
                         @if($in['required'] == true)
                         {{$in['name']}}: {
-                        required: "الحقل مطلوب",
+                        required: "@lang('text.required')",
                     },
                     @endif
                     @endforeach

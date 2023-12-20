@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   {{$title}} | عرض   @endsection
+@section('Page_Title')   {{$title}} | @lang('text.Show')   @endsection
 
 
 @section('content')
@@ -10,7 +10,7 @@
                 <div class="">
                     <a class="text-dark" href="{{route($routeName.'.index')}}">{{$title}}</a>
                     <span class="mx-2">-</span>
-                    <strong class="text-primary">عرض</strong>
+                    <strong class="text-primary">@lang('text.Show')</strong>
                 </div>
             </div>
             <div class="card">
@@ -27,7 +27,7 @@
                                                     {!! $value['name_ar'] !!} :
                                                     @if($value['type'] == 'file')
                                                         <a href="{{$value['value']}}" download class="btn btn-sm btn-success">
-                                                            <strong>تحميل</strong>
+                                                            <strong>@lang('text.Download')</strong>
                                                         </a>
                                                     @else
                                                         <strong>{!! $value['value'] !!}</strong>

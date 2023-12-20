@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   {{$title}} | تعديل   @endsection
+@section('Page_Title')   {{$title}} | @lang('text.Edit')   @endsection
 
 
 @section('content')
@@ -10,7 +10,7 @@
                 <div class="">
                     <a class="text-dark" href="{{route($routeName.'.index')}}">{{$title}}</a>
                     <span class="mx-2">-</span>
-                    <strong class="text-primary">تعديل</strong>
+                    <strong class="text-primary">@lang('text.Edit') </strong>
                 </div>
             </div>
             <div class="card">
@@ -30,7 +30,7 @@
                                                 <label class="form-label"> {{$input['label']}} @if($input['required'] == true) <span class="text-danger">*</span>@endif </label>
                                                 @if($input['type'] == 'select')
                                                     <select class="form-select form-control" @if($input['required']==true) required @endif name="{{$input['name'] }}">
-                                                        <option value="0"> اختار ....</option>
+                                                        <option value="0"> @lang('text.Choose')  ....</option>
                                                         @foreach($compact[$input['name']] as $key => $val)
                                                             <option @selected($key === $input['value']) value="{{$key}}">{{$val}}</option>
                                                         @endforeach
@@ -41,13 +41,13 @@
                                                     <div class="col-md-12">
                                                         <div class="uploadAndPreviewImage align-items-center row">
                                                             <div class="col-md-8">
-                                                                <label class="form-label">  @if($input['name'] == 'brochure') <small class="text-danger">(PDF - DOC - DOCX) ويجب أن لا تتعدي 10 ميجا</small>  @else   <small class="text-danger">(PNG - JPEG - JPG - WEBP - SVG - GIF) ويجب أن لا تتعدي 1 ميجا</small>@endif </label>
+                                                                <label class="form-label">  @if($input['name'] == 'brochure') <small class="text-danger">(PDF - DOC - DOCX) - 10 MB</small>  @else  <small class="text-danger">@lang('text.imageMimes') - @lang('text.imageMax')</small> @endif </label>
                                                                 <input type="{{$input['type']}}" id="{{$input['name']}}" name="{{$input['name']}}" class="form-control" @if($input['required'] == true) required @endif>
                                                             </div>
                                                             @if($input['name'] == 'brochure')
                                                             <div class="col-md-2">
                                                                 <div class=" text-center">
-                                                                    <a download href="{{($input['value']) ? $input['value'] : ''}}" class="btn btn-sm btn-secondary py-3 w-100">تحميل الملف التعريفي</a>
+                                                                    <a download href="{{($input['value']) ? $input['value'] : ''}}" class="btn btn-sm btn-secondary py-3 w-100">@lang('text.Download') @lang('text.Brochure')</a>
                                                                 </div>
                                                             </div>
                                                             @else
@@ -60,7 +60,7 @@
                                                         </div>
                                                     </div>
                                                 @else
-                                                    <input type="{{$input['type']}}" value="{{ $input['value'] }}" name="{{$input['name']}}" id="{{$input['name']}}" class="form-control" @if($input['required']) required @endif placeholder="ادخل {{$input['label']}}">
+                                                    <input type="{{$input['type']}}" value="{{ $input['value'] }}" name="{{$input['name']}}" id="{{$input['name']}}" class="form-control" @if($input['required']) required @endif placeholder=" {{$input['label']}}">
                                                 @endif
                                             </div>
                                         @endforeach

@@ -11,6 +11,7 @@ class CrudService
 {
     use HelperTrait;
 
+
     //INDEX
     public function index($model,$view,$searchParam=[])
     {
@@ -63,7 +64,7 @@ class CrudService
                 $created->assignRole($data['roles']);
             }
             DB::commit();
-            toastr()->success($this->insertMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.insertMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -118,7 +119,7 @@ class CrudService
             }
 
             DB::commit();
-            toastr()->success($this->updateMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.updateMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -136,7 +137,7 @@ class CrudService
             ($model->brochure) ? $this->delete_file_before_delete_item(parse_url($model->brochure)['path']) : '';
             $model->delete();
             DB::commit();
-            toastr()->success($this->deleteMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.deleteMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Throwable $th) {
             DB::rollBack();

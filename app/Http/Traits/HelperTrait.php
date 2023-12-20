@@ -11,13 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 Trait HelperTrait
 {
-    public $insertMsg = ' تم إنشاء العنصر بنجاح';
-    public $updateMsg = 'تم تحديث العنصر بنجاح';
-    public $deleteMsg = 'تم حذف العنصر بنجاح';
-    public $error = 'هناك خطأ ما...';
-
-    public $paginate = 20;
-
+    public $paginate =   20;
 
     //Success Response
     public function successResponse($message = '',$data = [],$statusCode = Response::HTTP_OK)

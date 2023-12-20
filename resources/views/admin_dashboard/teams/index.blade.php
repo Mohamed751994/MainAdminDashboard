@@ -1,6 +1,6 @@
 @include('admin_dashboard.main.index',
 [
-    'title' => 'فريق العمل',
+    'title' => __('text.'.\Request::segment(2).'-index'),
     'create' => true,
     'edit' => true,
     'show' => false,
@@ -9,10 +9,10 @@
     'model'=>Team::class,
     'thNames' =>[
         '#' => 'id',
-        'الصورة' => 'image',
-        'الأسم' => 'name_ar',
-        'المسمي الوظيفي' => 'job_title_ar',
-        'الحالة' => 'status',
-        'الترتيب' => 'sort'
+         __('text.Image') => 'image',
+         __('text.Name') => 'name_'.currentLanguage(),
+         __('text.JobTitle') => 'job_title_'.currentLanguage(),
+         __('text.Status') => 'status',
+         __('text.Sort') => 'sort'
     ]
 ])

@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   الإعدادات | تعديل   @endsection
+@section('Page_Title')   @lang('text.'.\Request::segment(2).'-index') | @lang('text.Edit')  @endsection
 
 
 @section('content')
@@ -8,9 +8,9 @@
         <div class="col-lg-12 mx-auto">
             <div class="breadcrumb d-flex align-items-center justify-content-between">
                 <div class="">
-                    <a class="text-dark" href="{{route('settings.index')}}">الإعدادات</a>
+                    <a class="text-dark" href="{{route('settings.index')}}">  @lang('text.'.\Request::segment(2).'-index') </a>
                     <span class="mx-2">-</span>
-                    <strong class="text-primary">تعديل</strong>
+                    <strong class="text-primary"> @lang('text.Edit') </strong>
                 </div>
             </div>
             <div class="card">
@@ -26,15 +26,15 @@
                                         @csrf
 
                                         <div class="col-md-6 mb-3">
-                                            <label class="form-label">الأسم   <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="label" value="{{$content->label}}" required placeholder="اسم الموقع" />
+                                            <label class="form-label">@lang('text.Name')   <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="label" value="{{$content->label}}" required placeholder="@lang('text.Name')" />
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label class="form-label">Key   <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" disabled  value="{{$content->key}}" required placeholder="site_name" />
+                                            <label class="form-label">@lang('text.Key')   <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" disabled  value="{{$content->key}}" required placeholder="@lang('text.Key')" />
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label class="form-label">النوع</label>
+                                            <label class="form-label">@lang('text.Type')</label>
                                             <select class="form-control" disabled onchange="changeInputType(this)">
                                                 <option value="text" @selected($content->input_type == 'text')>Text</option>
                                                 <option value="textarea" @selected($content->input_type == 'textarea')>Textarea</option>
@@ -43,11 +43,11 @@
                                         </div>
 
                                         <div class="col-md-12 mb-3 @if($content->input_type != 'text') d-none @endif" id="valueInputText">
-                                            <label class="form-label">القيمة <span class="text-danger">*</span></label>
+                                            <label class="form-label">@lang('text.Value') <span class="text-danger">*</span></label>
                                             <input type="text" @if($content->input_type == 'text') name="value"  required @endif class="form-control" value="{{$content->value}}" />
                                         </div>
                                         <div class="col-md-12 mb-3 @if($content->input_type != 'file') d-none @endif" id="valueInputFile">
-                                            <label class="form-label">القيمة <span class="text-danger">*</span></label>
+                                            <label class="form-label">@lang('text.Value') <span class="text-danger">*</span></label>
                                             <input type="file"  @if($content->input_type == 'file') name="value" required @endif  class="form-control" />
                                             @if($content->input_type == 'file')
                                                 <div class="mt-2">
@@ -57,7 +57,7 @@
 
                                         </div>
                                         <div class="col-md-12 mb-3  @if($content->input_type != 'textarea') d-none @endif" id="valueInputTextarea">
-                                            <label class="form-label">القيمة <span class="text-danger">*</span></label>
+                                            <label class="form-label">@lang('text.Value') <span class="text-danger">*</span></label>
                                             <textarea class="form-control ckeditor"   @if($content->input_type == 'textarea') name="value" required @endif >{!! $content->value !!}</textarea>
                                         </div>
 
@@ -102,13 +102,13 @@
                 messages: {
 
                     'label': {
-                        required: "الحقل مطلوب",
+                        required: "@lang('text.required')",
                     },
                     'key': {
-                        required: "الحقل مطلوب",
+                        required: "@lang('text.required')",
                     },
                     'value': {
-                        required: "الحقل مطلوب",
+                        required: "@lang('text.required')",
                     },
 
                 }

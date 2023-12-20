@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   الإعدادات | إضافة   @endsection
+@section('Page_Title')  @lang('text.'.\Request::segment(2).'-index') | @lang('text.Create')   @endsection
 
 
 @section('content')
@@ -8,9 +8,9 @@
         <div class="col-lg-12 mx-auto">
             <div class="breadcrumb d-flex align-items-center justify-content-between">
                 <div class="">
-                    <a class="text-dark" href="{{route('settings.index')}}">الإعدادات</a>
+                    <a class="text-dark" href="{{route('settings.index')}}"> @lang('text.'.\Request::segment(2).'-index')</a>
                     <span class="mx-2">-</span>
-                    <strong class="text-primary">إنشاء</strong>
+                    <strong class="text-primary">@lang('text.Create')</strong>
                 </div>
             </div>
             <div class="card">
@@ -25,15 +25,15 @@
                                         @csrf
 
                                         <div class="col-md-6 mb-3">
-                                            <label class="form-label">الأسم <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="label"  required placeholder="مثال :  اسم الموقع" />
+                                            <label class="form-label">@lang('text.Name') <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="label" name="label"  required placeholder="@lang('text.Name')" />
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label class="form-label">Key <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="key"  required placeholder="site_name" />
+                                            <label class="form-label">@lang('text.Key') <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="key"  required placeholder="@lang('text.Key')" />
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label class="form-label">النوع</label>
+                                            <label class="form-label">@lang('text.Type')</label>
                                             <select class="form-select form-control" name="input_type" onchange="changeInputType(this)">
                                                 <option value="text">Text</option>
                                                 <option value="textarea">Textarea</option>
@@ -41,15 +41,15 @@
                                             </select>
                                         </div>
                                         <div class="col-md-12 mb-3" id="valueInputText">
-                                            <label class="form-label">القيمة <span class="text-danger">*</span></label>
+                                            <label class="form-label">@lang('text.Value') <span class="text-danger">*</span></label>
                                             <input type="text" name="value"  class="form-control" />
                                         </div>
                                         <div class="col-md-12 mb-3 d-none" id="valueInputFile">
-                                            <label class="form-label">القيمة <span class="text-danger">*</span></label>
+                                            <label class="form-label">@lang('text.Value') <span class="text-danger">*</span></label>
                                             <input type="file" name="not_value"  class="form-control" />
                                         </div>
                                         <div class="col-md-12 mb-3 d-none" id="valueInputTextarea">
-                                            <label class="form-label">القيمة <span class="text-danger">*</span></label>
+                                            <label class="form-label">@lang('text.Value') <span class="text-danger">*</span></label>
                                             <textarea class="form-control ckeditor" name="not_value"  ></textarea>
                                         </div>
                                         @include('admin_dashboard.inputs.add_btn')
@@ -92,13 +92,13 @@
                 messages: {
 
                     'label': {
-                        required: "الحقل مطلوب",
+                        required: "@lang('text.required')",
                     },
                     'key': {
-                        required: "الحقل مطلوب",
+                        required: "@lang('text.required')",
                     },
                     'value': {
-                        required: "الحقل مطلوب",
+                        required: "@lang('text.required')",
                     },
 
                 }

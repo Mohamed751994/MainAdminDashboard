@@ -9,6 +9,20 @@ class ApiService
 {
     use HelperTrait;
 
+    public $insertMsg;
+    public $updateMsg;
+    public $deleteMsg;
+    public $error;
+    public $paginate;
+
+    function __construct() {
+        $this->insertMsg = trans('text.insertMsg');
+        $this->updateMsg =   trans('text.updateMsg');
+        $this->deleteMsg =   trans('text.deleteMsg');
+        $this->error =   trans('text.error');
+        $this->paginate =   20;
+    }
+
     //Public Get ALL Model Data And Single Model Data
     public function getAllRecords($model, $message)
     {

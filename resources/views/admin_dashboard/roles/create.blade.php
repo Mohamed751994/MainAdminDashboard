@@ -1,5 +1,5 @@
 @extends('admin_dashboard.layout.master')
-@section('Page_Title')   الأدوار والصلاحيات | إضافة   @endsection
+@section('Page_Title')    @lang('text.'.\Request::segment(2).'-index') | @lang('text.Create')    @endsection
 
 
 @section('content')
@@ -8,9 +8,9 @@
         <div class="col-lg-12 mx-auto">
             <div class="breadcrumb d-flex align-items-center justify-content-between">
                 <div class="">
-                    <a class="text-dark" href="{{route('roles.index')}}">الأدوار والصلاحيات</a>
+                    <a class="text-dark" href="{{route('roles.index')}}">@lang('text.'.\Request::segment(2).'-index')</a>
                     <span class="mx-2">-</span>
-                    <strong class="text-primary">إنشاء</strong>
+                    <strong class="text-primary">@lang('text.Create') </strong>
                 </div>
             </div>
             <div class="card">
@@ -26,13 +26,13 @@
 
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
-                                                <label for="name"> الأسم <span class="text-danger">*</span> </label>
-                                                <input type="text" name="name" id="name" class="form-control mt-2" required  placeholder="ادخل الأسم">
+                                                <label for="name"> @lang('text.Name')  <span class="text-danger">*</span> </label>
+                                                <input type="text" name="name" id="name" class="form-control mt-2" required  placeholder=" @lang('text.Name')">
                                             </div>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <div class="form-group">
-                                                <label class="mb-3" for="email"> الصلاحيات <span class="text-danger">*</span> </label>
+                                                <label class="mb-3" for="email">  @lang('text.Permissions') <span class="text-danger">*</span> </label>
                                                 <div class="row align-items-center justify-content-between">
                                                     @foreach($compact['permission'] as $value)
                                                         <div class="col-md-2 d-flex align-items-center m-2 singlePermission">
@@ -75,7 +75,7 @@
                 messages: {
 
                     'name': {
-                        required: 'الحقل مطلوب',
+                        required: "@lang('text.required')",
                     },
 
                 }

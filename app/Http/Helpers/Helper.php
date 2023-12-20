@@ -32,11 +32,11 @@ if (!function_exists('orderTypes')) {
     function orderTypes()
     {
         return [
-            ['name' =>'contact', 'color'=>'primary', 'name_ar'=>' تواصل معنا','value' =>'contact'],
-            ['name' =>'service', 'color'=>'success', 'name_ar'=>'  الخدمات','value' =>'service'],
-            ['name' =>'industry', 'color'=>'danger', 'name_ar'=> ' الصناعات','value' =>'industry'],
-            ['name' =>'solution', 'color'=>'warning', 'name_ar'=> ' الحلول','value' =>'solution'],
-            ['name' =>'career', 'color'=>'info', 'name_ar'=> ' الوظائف','value' =>'career'],
+            ['name' =>'contact', 'color'=>'primary', 'name_ar'=>__('text.Contactus'),'value' =>'contact'],
+            ['name' =>'service', 'color'=>'success', 'name_ar'=>__('text.Services'),'value' =>'service'],
+            ['name' =>'industry', 'color'=>'danger', 'name_ar'=> __('text.Industries'),'value' =>'industry'],
+            ['name' =>'solution', 'color'=>'warning', 'name_ar'=> __('text.Solutions'),'value' =>'solution'],
+            ['name' =>'career', 'color'=>'info', 'name_ar'=> __('text.Careers'),'value' =>'career'],
         ];
     }
 }

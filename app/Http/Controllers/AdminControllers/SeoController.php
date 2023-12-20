@@ -37,7 +37,7 @@ class SeoController extends Controller
         try {
             $allParams = [$request->except('_token','id')];
             Seo::updateOrCreate(['id' => $request->get('id')],$allParams[0]);
-            toastr()->success($this->updateMsg, 'success', ['timeOut' => 8000]);
+            toastr()->success(__('text.updateMsg'), 'success', ['timeOut' => 8000]);
             return redirect()->back();
         } catch (\Exception $e) {
             toastr()->error($e, 'error', ['timeOut' => 8000]);
