@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Traits\HelperTrait;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,6 +33,12 @@ class Blog extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+        $dt = Carbon::createFromDate($value);
+        return $dt->toFormattedDateString();
+    }
+
     public function scopeRetrieve($q)
     {
         return $q->select([
@@ -43,7 +50,8 @@ class Blog extends Model
             'description_'.app()->getLocale().' as long_description',
             'image',
             'views',
-            'tags'
+            'tags',
+            'created_at'
         ]);
     }
 }
