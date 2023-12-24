@@ -5,6 +5,7 @@ namespace App\Http\Controllers\APIControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Http\Traits\HelperTrait;
+use App\Models\About;
 use App\Models\Blog;
 use App\Models\Career;
 use App\Models\Category;
@@ -102,6 +103,13 @@ class CMSController extends Controller
         return $this->apiService->getAllRecords(Faq::class,'الأسئلة الشائعة');
     }
     //******************************** End Faqs ********************************
+
+    //******************************** Abouts ********************************
+    public function abouts()
+    {
+        return $this->apiService->getAllRecords(About::class,'عن الشركة');
+    }
+    //******************************** End Abouts ********************************
 
 
 
