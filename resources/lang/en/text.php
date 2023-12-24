@@ -179,7 +179,11 @@ return [
     'faqs-show' =>'Show Faqs',
     'faqs-delete' =>'Delete Faqs',
 
-
+    'abouts-index' =>'About us ',
+    'abouts-create' =>'Create About us  ',
+    'abouts-edit' =>'Edit About us  ',
+    'abouts-show' =>'Show About us  ',
+    'abouts-delete' =>'Delete About us  ',
 
 
     'Count' => 'Count',

@@ -181,6 +181,12 @@ return [
     'faqs-show' =>'عرض  الأسئلة الشائعة',
     'faqs-delete' =>'حذف  الأسئلة الشائعة',
 
+    'abouts-index' =>'عن الشركة ',
+    'abouts-create' =>'إنشاء عن الشركة ',
+    'abouts-edit' =>'تعديل عن الشركة  ',
+    'abouts-show' =>'عرض عن الشركة  ',
+    'abouts-delete' =>'حذف عن الشركة  ',
+
 
     'Count' => 'عدد',
     'Services' => 'الخدمات',
