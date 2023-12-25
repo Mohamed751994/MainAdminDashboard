@@ -9,11 +9,7 @@
             <ul class="navbar-nav align-items-center">
                 <li class="mx-3 switcher">
                     <a href="{{route('switch-language',switcher())}}">
-                        @if(switcher() == 'en')
-                            <img src="{{asset('admin_dashboard/assets/images/icons/en.png')}}" width="20">
-                        @else
-                            <img src="{{asset('admin_dashboard/assets/images/icons/ar.png')}}" width="20">
-                        @endif
+                        <img src="{{asset('admin_dashboard/assets/images/icons/'.switcher().'.png')}}" width="20">
                     </a>
                 </li>
                 <li class="nav-item dropdown dropdown-large">
@@ -59,7 +55,7 @@
         <div class="dropdown dropdown-user-setting">
             <a class="dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                 <div class="user-setting d-flex align-items-center gap-3">
-                    <img src="{{ asset('admin_dashboard/assets/images/avatars/avatar-1.png') }}" class="user-img" alt="">
+                    <i class="lni lni-user avatarHeader"></i>
                     <div class="d-none d-sm-block">
                         <p class="user-name mb-0">{{auth()->user()->name}}</p>
                         <small class="mb-0 dropdown-user-designation">{{auth()->user()->type}}</small>

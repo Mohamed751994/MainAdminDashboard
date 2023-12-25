@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS -->
     <link href="{{ currentLanguage() == 'en' ? asset('admin_dashboard/assets/css/bootstrap_en.min.css') : asset('admin_dashboard/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{ asset('admin_dashboard/assets/css/bootstrap-extended.css')}}" rel="stylesheet" />
-    <link href="{{ currentLanguage() == 'en' ? asset('admin_dashboard/assets/css/style_en.css') : asset('admin_dashboard/assets/css/style.css')}}" rel="stylesheet" />
+    <link href="{{ currentLanguage() == 'en' ? asset('admin_dashboard/assets/css/style_en.css') : asset('admin_dashboard/assets/css/style.css')}}?v=1" rel="stylesheet" />
     <link href="{{ asset('admin_dashboard/assets/css/icons.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">

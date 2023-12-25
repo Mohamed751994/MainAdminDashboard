@@ -1973,7 +1973,11 @@ input.error,textarea.error,select.error
 {
     color: #0f47e7;
 }
-.switcher a
+.avatarHeader
 {
-
+    font-size: 25px !important;
+    background: #13234a;
+    padding: 12px;
+    color: #fff;
+    border-radius: 50%;
 }
