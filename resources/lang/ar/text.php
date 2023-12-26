@@ -187,6 +187,18 @@ return [
     'abouts-show' =>'عرض عن الشركة  ',
     'abouts-delete' =>'حذف عن الشركة  ',
 
+    'testimonials-index' =>'آراء العملاء',
+    'testimonials-create' =>'إنشاء  آراء العملاء',
+    'testimonials-edit' =>'تعديل  آراء العملاء',
+    'testimonials-show' =>'عرض  آراء العملاء',
+    'testimonials-delete' =>'حذف  آراء العملاء',
+
+    'features-index' =>'المميزات',
+    'features-create' =>'إنشاء  المميزات',
+    'features-edit' =>'تعديل  المميزات',
+    'features-show' =>'عرض  المميزات',
+    'features-delete' =>'حذف  المميزات',
+
 
     'Count' => 'عدد',
     'Services' => 'الخدمات',

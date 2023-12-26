@@ -185,6 +185,19 @@ return [
     'abouts-show' =>'Show About us  ',
     'abouts-delete' =>'Delete About us  ',
 
+    'testimonials-index' =>'Testimonials',
+    'testimonials-create' =>'Create Testimonials',
+    'testimonials-edit' =>'Edit Testimonials',
+    'testimonials-show' =>'Show Testimonials',
+    'testimonials-delete' =>'Delete Testimonials',
+
+    'features-index' =>'Features',
+    'features-create' =>'Create Features',
+    'features-edit' =>'Edit Features',
+    'features-show' =>'Show Features',
+    'features-delete' =>'Delete Features',
+
+
 
     'Count' => 'Count',
     'Services' => 'Services',

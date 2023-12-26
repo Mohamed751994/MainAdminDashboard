@@ -34,6 +34,8 @@ Route::middleware(['trust', 'language'])->group(function () {
     Route::get('/blog/{slug}', [CMSController::class, 'blog'])->name('blog');
     Route::get('/faqs', [CMSController::class, 'faqs'])->name('faqs');
     Route::get('/abouts', [CMSController::class, 'abouts'])->name('abouts');
+    Route::get('/features', [CMSController::class, 'features'])->name('features');
+    Route::get('/testimonials', [CMSController::class, 'testimonials'])->name('testimonials');
 
     //Settings
     Route::get('/settings', [CMSController::class, 'settings'])->name('settings');

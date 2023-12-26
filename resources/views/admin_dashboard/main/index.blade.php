@@ -81,7 +81,7 @@
                             @endcan
                             @foreach($thNames as $key =>$col)
                             <td>
-                                @if($col == 'image')
+                                @if($col == 'image' || $col == 'icon')
                                     <img src="{{ $con->$col }}" class="rounded-circle imageList" alt="">
                                 @elseif($col == 'status')
                                     <div class="form-check form-switch">

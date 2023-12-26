@@ -10,6 +10,7 @@ use App\Models\Blog;
 use App\Models\Career;
 use App\Models\Category;
 use App\Models\Faq;
+use App\Models\Feature;
 use App\Models\Industry;
 use App\Models\Order;
 use App\Models\Seo;
@@ -17,6 +18,7 @@ use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Solution;
 use App\Models\Team;
+use App\Models\Testimonial;
 use App\Services\ApiService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -110,6 +112,18 @@ class CMSController extends Controller
         return $this->apiService->getAllRecords(About::class,'عن الشركة');
     }
     //******************************** End Abouts ********************************
+
+
+    //******************************** Testimonials And Features ********************************
+    public function testimonials()
+    {
+        return $this->apiService->getAllRecords(Testimonial::class,'آراء العملاء');
+    }
+    public function features()
+    {
+        return $this->apiService->getAllRecords(Feature::class,'المميزات');
+    }
+    //******************************** End Solutions ********************************
 
 
 
