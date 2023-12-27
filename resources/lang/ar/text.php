@@ -199,6 +199,12 @@ return [
     'features-show' =>'عرض  المميزات',
     'features-delete' =>'حذف  المميزات',
 
+    'news-index' =>'الأخبار',
+    'news-create' =>'إنشاء  الأخبار',
+    'news-edit' =>'تعديل  الأخبار',
+    'news-show' =>'عرض  الأخبار',
+    'news-delete' =>'حذف  الأخبار',
+
 
     'Count' => 'عدد',
     'Services' => 'الخدمات',

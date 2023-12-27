@@ -28,6 +28,7 @@ Route::middleware(['auth','switch-language'])->namespace('App\Http\Controllers\A
 
 
     //Routes
+Route::resource('news', 'NewController');
 Route::resource('features', 'FeatureController');
 Route::resource('testimonials', 'TestimonialController');
 Route::resource('abouts', 'AboutController');

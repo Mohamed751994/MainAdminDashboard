@@ -197,6 +197,11 @@ return [
     'features-show' =>'Show Features',
     'features-delete' =>'Delete Features',
 
+    'news-index' =>'News',
+    'news-create' =>'Create News',
+    'news-edit' =>'Edit News',
+    'news-show' =>'Show News',
+    'news-delete' =>'Delete News',
 
 
     'Count' => 'Count',
