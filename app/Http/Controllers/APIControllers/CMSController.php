@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Industry;
+use App\Models\News;
 use App\Models\Order;
 use App\Models\Seo;
 use App\Models\Service;
@@ -96,6 +97,18 @@ class CMSController extends Controller
     public function blog($slug)
     {
         return $this->apiService->getSingleRecord(Blog::class,'صفحة المقالة الواحدة',$slug);
+    }
+    //******************************** End Blogs ********************************
+
+
+    //******************************** news ********************************
+    public function news()
+    {
+        return $this->apiService->getAllRecords(News::class,'الأخبار');
+    }
+    public function news_single($slug)
+    {
+        return $this->apiService->getSingleRecord(News::class,'صفحة الخبر الواحد',$slug);
     }
     //******************************** End Blogs ********************************
 
