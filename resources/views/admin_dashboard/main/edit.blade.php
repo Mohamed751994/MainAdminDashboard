@@ -32,7 +32,7 @@
                                                     <select class="form-select form-control" @if($input['required']==true) required @endif name="{{$input['name'] }}">
                                                         <option value="0"> @lang('text.Choose')  ....</option>
                                                         @foreach($compact[$input['name']] as $key => $val)
-                                                            <option @selected($key === $input['value']) value="{{$key}}">{{$val}}</option>
+                                                            <option @if($key == $input['value']) selected @endif value="{{$key}}">{{$val}}</option>
                                                         @endforeach
                                                     </select>
                                                 @elseif($input['type'] == 'textarea')
