@@ -11,6 +11,7 @@
         ['type' => 'textarea', 'required' =>true, 'name'=>'description_en', 'label' =>  __('text.Description') .__('text.English_Language')],
         ['type' => 'textarea', 'required' =>true, 'name'=>'description_ar', 'label' =>  __('text.Description') .__('text.Arabic_Language')],
         ['type' => 'file', 'required' =>true, 'name'=>'image', 'label' => __('text.Image')],
+        ['type' => 'number', 'required' =>false, 'name'=>'views', 'label' => __('text.Views')],
     ],
     'status_order' =>true,
     'home_display' =>true,

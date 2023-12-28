@@ -17,6 +17,11 @@ Route::get("switch-language/{lang}", function ($lang) {
 /*All Admin Routes List*/
 Route::middleware(['auth','switch-language'])->namespace('App\Http\Controllers\AdminControllers')->group(function () {
 
+    Route::get("/migrate", function () {
+        \Illuminate\Support\Facades\Artisan::call('migrate');
+        //  \Illuminate\Support\Facades\Artisan::call('db:seed');
+        return 'Migrated Successfully';
+    });
     //Default
     Route::post('/logout_admin', [DashboardController::class, 'logout'])->name('logout_admin');
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');

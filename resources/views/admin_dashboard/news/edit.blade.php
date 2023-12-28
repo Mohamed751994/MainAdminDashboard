@@ -11,6 +11,7 @@
         ['type' => 'textarea', 'required' =>true, 'name'=>'description_en', 'label' =>  __('text.Description') .__('text.English_Language'), 'value' =>$content->description_en],
         ['type' => 'textarea', 'required' =>true, 'name'=>'description_ar', 'label' =>  __('text.Description') .__('text.Arabic_Language'), 'value' =>$content->description_ar],
         ['type' => 'file', 'required' =>false, 'name'=>'image', 'label' => __('text.Image'), 'value' =>$content->image],
+        ['type' => 'number', 'required' =>false, 'name'=>'views', 'label' => __('text.Views'), 'value' =>$content->views],
     ],
     'status_order' =>true,
     'home_display' =>true,
