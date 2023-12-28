@@ -265,6 +265,7 @@ return [
     'deleteMsg' => 'Item Deleted Successfully...',
     'error' => 'There is an error....',
     'deleteSelectedItems' => 'Items Selected Deleted Successfully...',
+    'Views' => 'Views',
 
 ];
 

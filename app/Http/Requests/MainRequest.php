@@ -41,6 +41,7 @@ class MainRequest extends FormRequest
             'status' => 'nullable|integer',
             'sort' => 'nullable|integer|min:0',
             'tags' => 'nullable',
+            'views' => 'nullable',
             'requirements_en' => 'nullable',
             'requirements_ar' => 'nullable',
             'job_time' => 'nullable',
