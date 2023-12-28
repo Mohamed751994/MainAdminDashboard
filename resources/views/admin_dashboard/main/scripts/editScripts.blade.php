@@ -11,7 +11,7 @@
             $("#validateForm").validate({
                 rules: {
                     @foreach($inputs as $in)
-                        {{($in['required'] == true) ? $in['name'] : ''}}: {
+                        {{($in['required'] == true) ? $in['name'] : 'test'}}: {
                         required: true,
                     },
                     @endforeach
