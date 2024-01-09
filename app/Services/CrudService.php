@@ -58,6 +58,7 @@ class CrudService
             {
                 $data['slug']=str_replace(' ', '-', $data['slug']);
             }
+            $data['views'] = 0;
             $created = $model::create($data);
             if(isset($data['roles']))
             {
@@ -110,6 +111,8 @@ class CrudService
             {
                 $data['slug']=str_replace(' ', '-', $data['slug']);
             }
+            $data['views'] = 0;
+
             $model->update($data);
 
             if(isset($data['roles']))
